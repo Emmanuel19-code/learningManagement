@@ -20,8 +20,8 @@ const LinkSchema = new mongoose.Schema({
 
 const commentSchema = new mongoose.Schema({
   user: String,
-  comment: String,
-  commentReplies: String,
+  question: String,
+  questionReplies: [Object],
 });
 
 const courseDataSchema = new mongoose.Schema({
@@ -30,11 +30,11 @@ const courseDataSchema = new mongoose.Schema({
   title: String,
   vidoSection: String,
   description: String,
-  videoLenght: Number,
+  videoLength: Number,
   videoPlayer: String,
   links: [LinkSchema],
   suggestion: String,
-  questions: String,
+  questions: [commentSchema],
 });
 
 const courseSchema = new mongoose.Schema({
@@ -53,14 +53,14 @@ const courseSchema = new mongoose.Schema({
   estimatedPrice:{
     Number
   },
-  Thumbnail:{
+  thumbnail:{
     public_id:{
         type:String,
-        required:true
+       // required:true
     },
     url:{
         type:String,
-        required:true
+        //required:true
     }
   },
   tags:{
@@ -89,5 +89,5 @@ const courseSchema = new mongoose.Schema({
   }
 });
 
-const course = new mongoose.model("course",courseSchema)
-export default course
+const courseModel = new mongoose.model("course",courseSchema)
+export default courseModel

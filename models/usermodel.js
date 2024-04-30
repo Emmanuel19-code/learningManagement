@@ -23,7 +23,6 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "Please provide the missing value"],
     },
     avatar: {
       public_id: String,
@@ -37,6 +36,10 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    accountid:{
+      type:String
+    }
+    ,
     courses: [
       {
         courseId: String,

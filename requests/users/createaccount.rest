@@ -6,5 +6,6 @@ Content-Type: application/json
     "name":"Emmanuel Adane Bosea",
     "email":"emmanueladane52@gmail.com",
     "password":"B125@sah",
-    "username":"aebosea"
+    "username":"aebosea",
+    "role":"admin"
 }
